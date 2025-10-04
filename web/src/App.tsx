@@ -1,4 +1,5 @@
 import InventoryComponent from './components/inventory';
+import ScandinavianInventory from './components/inventory/ScandinavianInventory';
 import useNuiEvent from './hooks/useNuiEvent';
 import { Items } from './store/items';
 import { Locale } from './store/locale';
@@ -11,6 +12,7 @@ import DragPreview from './components/utils/DragPreview';
 import { fetchNui } from './utils/fetchNui';
 import { useDragDropManager } from 'react-dnd';
 import KeyPress from './components/utils/KeyPress';
+import { USE_SCANDINAVIAN_UI } from './config';
 
 debugData([
   {
@@ -112,9 +114,19 @@ const App: React.FC = () => {
 
   return (
     <div className="app-wrapper">
-      <InventoryComponent />
-      <DragPreview />
-      <KeyPress />
+      {USE_SCANDINAVIAN_UI ? (
+        <>
+          <ScandinavianInventory />
+          <DragPreview />
+          <KeyPress />
+        </>
+      ) : (
+        <>
+          <InventoryComponent />
+          <DragPreview />
+          <KeyPress />
+        </>
+      )}
     </div>
   );
 };
