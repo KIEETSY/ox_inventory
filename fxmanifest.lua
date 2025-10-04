@@ -30,7 +30,9 @@ server_scripts {
 
 client_script 'init.lua'
 
-ui_page 'web/build/index.html'
+-- Select UI based on convar (requires resource restart to take effect)
+local useReactUI = GetConvarInt('inventory:reactui', 0) == 1
+ui_page(useReactUI and 'web-react/build/index.html' or 'web/build/index.html')
 
 files {
     'client.lua',
@@ -40,6 +42,9 @@ files {
     'web/build/assets/*.js',
     'web/build/assets/*.css',
     'web/images/*.png',
+    'web-react/build/index.html',
+    'web-react/build/assets/*.js',
+    'web-react/build/assets/*.css',
     'modules/**/shared.lua',
     'modules/**/client.lua',
     'modules/bridge/**/client.lua',
