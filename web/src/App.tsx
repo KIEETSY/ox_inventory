@@ -1,4 +1,5 @@
 import InventoryComponent from './components/inventory';
+import ScandinavianInventory from './components/inventory/ScandinavianInventory';
 import useNuiEvent from './hooks/useNuiEvent';
 import { Items } from './store/items';
 import { Locale } from './store/locale';
@@ -110,11 +111,24 @@ const App: React.FC = () => {
     manager.dispatch({ type: 'dnd-core/END_DRAG' });
   });
 
+  // Use Scandinavian UI by default
+  const useScandinavianUI = true;
+
   return (
     <div className="app-wrapper">
-      <InventoryComponent />
-      <DragPreview />
-      <KeyPress />
+      {useScandinavianUI ? (
+        <>
+          <ScandinavianInventory />
+          <DragPreview />
+          <KeyPress />
+        </>
+      ) : (
+        <>
+          <InventoryComponent />
+          <DragPreview />
+          <KeyPress />
+        </>
+      )}
     </div>
   );
 };

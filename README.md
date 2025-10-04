@@ -31,6 +31,36 @@ We do not guarantee compatibility or support for third-party resources.
 - Supports player-owned vehicles, licenses, and group systems implemented by frameworks.
 - Fully synchronised, allowing multiple players to [access the same inventory](https://user-images.githubusercontent.com/65407488/230926091-c0033732-d293-48c9-9d62-6f6ae0a8a488.mp4).
 
+## 🎨 Scandinavian UI
+
+This resource includes a modern, Scandinavian-themed UI built with React and Tailwind CSS. The UI features:
+
+- **Left Panel**: "FICKOR" (Pockets) grid layout with collapsible sections
+- **Right Panel**: Character silhouette with equipment slots or secondary inventory display
+- **Bottom Hotbar**: Quick access to the first 5 inventory slots (slots 1-5)
+- **Top Hotkey Bar**: Visual display of keyboard shortcuts
+
+### No Build Required
+
+The resource comes with pre-built UI assets in `web/build/`, so you can:
+1. Download and extract the resource
+2. Start your server
+3. Press your inventory keybind to open the new UI
+
+No additional setup, npm install, or build steps required on the server!
+
+### Toggle UI (Optional)
+
+The UI can be toggled between Classic and Scandinavian themes by editing `web/src/App.tsx` and changing the `useScandinavianUI` constant, then rebuilding:
+
+```bash
+cd web
+npm install
+npm run build
+```
+
+## ✨ Features (continued)
+
 ### Items
 
 - Inventory items are stored per-slot, with customisable metadata to support item uniqueness.

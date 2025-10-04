@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Scandinavian UI styles */
+@layer components {
+  .scandinavian-container {
+    @apply flex items-center justify-center h-screen w-screen;
+  }
+  
+  .scandinavian-inventory {
+    @apply flex gap-6 p-6 max-w-7xl;
+  }
+  
+  .scandinavian-left-panel {
+    @apply flex flex-col gap-4;
+  }
+  
+  .scandinavian-section {
+    @apply bg-scandinavian-panel border border-scandinavian-border rounded-lg p-4;
+  }
+  
+  .scandinavian-section-header {
+    @apply flex justify-between items-center mb-3 text-scandinavian-text font-medium;
+  }
+  
+  .scandinavian-grid {
+    @apply grid gap-1;
+  }
+  
+  .scandinavian-slot {
+    @apply bg-scandinavian-bg border border-scandinavian-border rounded aspect-square flex items-center justify-center relative cursor-pointer hover:border-scandinavian-accent transition-colors;
+  }
+  
+  .scandinavian-slot-image {
+    @apply w-full h-full object-contain p-1;
+  }
+  
+  .scandinavian-slot-count {
+    @apply absolute bottom-1 right-1 text-xs bg-black/50 px-1 rounded;
+  }
+  
+  .scandinavian-right-panel {
+    @apply flex flex-col gap-4;
+  }
+  
+  .scandinavian-character {
+    @apply bg-scandinavian-panel border border-scandinavian-border rounded-lg p-4 flex flex-col items-center;
+  }
+  
+  .scandinavian-equipment-grid {
+    @apply grid grid-cols-3 gap-2 mt-4;
+  }
+  
+  .scandinavian-hotbar {
+    @apply fixed bottom-6 left-1/2 -translate-x-1/2 flex gap-2 bg-scandinavian-panel/90 border border-scandinavian-border rounded-lg p-3;
+  }
+  
+  .scandinavian-hotkey-bar {
+    @apply fixed top-6 left-1/2 -translate-x-1/2 flex gap-2 bg-scandinavian-panel/90 border border-scandinavian-border rounded-lg p-2;
+  }
+  
+  .scandinavian-weight-bar {
+    @apply w-full h-2 bg-scandinavian-bg rounded-full overflow-hidden;
+  }
+  
+  .scandinavian-weight-fill {
+    @apply h-full bg-scandinavian-accent transition-all;
+  }
+}
