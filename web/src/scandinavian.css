@@ -13,7 +13,7 @@
   }
   
   .scandinavian-left-panel {
-    @apply flex flex-col gap-4;
+    @apply flex flex-col gap-4 min-w-[500px];
   }
   
   .scandinavian-section {
@@ -21,11 +21,16 @@
   }
   
   .scandinavian-section-header {
-    @apply flex justify-between items-center mb-3 text-scandinavian-text font-medium;
+    @apply flex justify-between items-center mb-3 text-scandinavian-text font-medium text-lg;
   }
   
   .scandinavian-grid {
-    @apply grid gap-1;
+    @apply grid gap-1.5;
+  }
+  
+  /* Ensure inventory slots within Scandinavian grid have proper sizing */
+  .scandinavian-grid .inventory-slot {
+    @apply w-[90px] h-[90px];
   }
   
   .scandinavian-slot {
@@ -41,7 +46,7 @@
   }
   
   .scandinavian-right-panel {
-    @apply flex flex-col gap-4;
+    @apply flex flex-col gap-4 min-w-[500px];
   }
   
   .scandinavian-character {
@@ -49,15 +54,15 @@
   }
   
   .scandinavian-equipment-grid {
-    @apply grid grid-cols-3 gap-2 mt-4;
+    @apply grid grid-cols-3 gap-2 mt-4 w-full;
   }
   
   .scandinavian-hotbar {
-    @apply fixed bottom-6 left-1/2 -translate-x-1/2 flex gap-2 bg-scandinavian-panel/90 border border-scandinavian-border rounded-lg p-3;
+    @apply fixed bottom-6 left-1/2 -translate-x-1/2 flex gap-2 bg-scandinavian-panel/90 border border-scandinavian-border rounded-lg p-3 backdrop-blur-sm;
   }
   
   .scandinavian-hotkey-bar {
-    @apply fixed top-6 left-1/2 -translate-x-1/2 flex gap-2 bg-scandinavian-panel/90 border border-scandinavian-border rounded-lg p-2;
+    @apply fixed top-6 left-1/2 -translate-x-1/2 flex gap-2 bg-scandinavian-panel/90 border border-scandinavian-border rounded-lg p-2 backdrop-blur-sm z-50;
   }
   
   .scandinavian-weight-bar {
