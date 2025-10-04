@@ -3,4 +3,3 @@ modules/logs/**/
 node_modules
 .idea
 web-react/node_modules
-web-react/build
