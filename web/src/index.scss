@@ -675,6 +675,60 @@ $scandiBorder: rgba(74, 95, 122, 0.6);
 .scandinavian-left-panel {
   min-width: 480px;
   max-width: 550px;
+  
+  .scandi-inventory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    
+    .scandi-header-title {
+      font-family: $mainFont;
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #d4dce6;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+    
+    .scandi-weight-info {
+      font-family: $mainFont;
+      font-size: 15px;
+      color: #b8c5d6;
+      font-weight: 600;
+    }
+  }
+  
+  .scandi-grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    margin-top: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .scandi-subsection {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 2px solid rgba(74, 95, 122, 0.35);
+    
+    .scandi-subsection-title {
+      font-family: $mainFont;
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #b8c5d6;
+      margin: 0 0 10px 0;
+      letter-spacing: 1.2px;
+    }
+    
+    .scandi-subsection-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+  }
 }
 
 .scandinavian-right-panel {
