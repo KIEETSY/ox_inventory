@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { InventoryData } from './types/inventory';
 import { TopBar } from './components/TopBar';
 import { LeftPanel } from './components/LeftPanel';

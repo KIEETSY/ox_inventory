@@ -1,14 +1,16 @@
 import { InventoryData } from '../types/inventory';
 
 export const debugData = (events: Array<{ action: string; data: any }>) => {
-  if (import.meta.env.MODE === 'development' && (window as any).GetParentResourceName === undefined) {
-    for (const event of events) {
-      window.dispatchEvent(
-        new MessageEvent('message', {
-          data: event,
-        })
-      );
-    }
+  if (import.meta.env.DEV && (window as any).GetParentResourceName === undefined) {
+    setTimeout(() => {
+      for (const event of events) {
+        window.dispatchEvent(
+          new MessageEvent('message', {
+            data: event,
+          })
+        );
+      }
+    }, 100);
   }
 };
 
