@@ -1,4 +1,4 @@
-import InventoryComponent from './components/inventory';
+import ScandinavianInventory from './components/inventory/ScandinavianInventory';
 import useNuiEvent from './hooks/useNuiEvent';
 import { Items } from './store/items';
 import { Locale } from './store/locale';
@@ -112,7 +112,7 @@ const App: React.FC = () => {
 
   return (
     <div className="app-wrapper">
-      <InventoryComponent />
+      <ScandinavianInventory />
       <DragPreview />
       <KeyPress />
     </div>
