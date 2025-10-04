@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ox Inventory</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body, iframe {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <iframe id="ui-frame" style="border:none;"></iframe>
+    <script>
+        // Get the resource name
+        const resourceName = window.GetParentResourceName ? window.GetParentResourceName() : 'ox_inventory';
+        
+        // Request config from client
+        fetch(`https://${resourceName}/getUIConfig`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({})
+        })
+        .then(resp => resp.json())
+        .then(config => {
+            const frame = document.getElementById('ui-frame');
+            if (config && config.useReactUI) {
+                frame.src = 'web-react/build/index.html';
+            } else {
+                frame.src = 'web/build/index.html';
+            }
+        })
+        .catch(() => {
+            // Default to original UI if fetch fails
+            document.getElementById('ui-frame').src = 'web/build/index.html';
+        });
+
+        // Forward messages to iframe
+        window.addEventListener('message', (event) => {
+            const frame = document.getElementById('ui-frame');
+            if (frame && frame.contentWindow) {
+                frame.contentWindow.postMessage(event.data, '*');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -872,6 +872,17 @@ local function registerCommands()
 	registerCommands = nil
 end
 
+-- Test command for React UI (development/testing purposes)
+if client.useReactUI then
+	RegisterCommand('testinv', function()
+		if invOpen then
+			client.closeInventory()
+		else
+			client.openInventory()
+		end
+	end, false)
+end
+
 function client.closeInventory(server)
 	-- because somehow people are triggering this when the inventory isn't loaded
 	-- and they're incapable of debugging, and I can't repro on a fresh install

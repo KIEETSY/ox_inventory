@@ -93,6 +93,7 @@ else
         ignoreweapons = json.decode(GetConvar('inventory:ignoreweapons', '[]')),
         suppresspickups = GetConvarInt('inventory:suppresspickups', 1) == 1,
         disableweapons = GetConvarInt('inventory:disableweapons', 0) == 1,
+        useReactUI = GetConvarInt('inventory:reactui', 0) == 1,
     }
 
     local ignoreweapons = table.create(0, (client.ignoreweapons and #client.ignoreweapons or 0) + 3)
