@@ -35,29 +35,48 @@ We do not guarantee compatibility or support for third-party resources.
 
 This resource includes a modern, Scandinavian-themed UI built with React and Tailwind CSS. The UI features:
 
-- **Left Panel**: "FICKOR" (Pockets) grid layout with collapsible sections
-- **Right Panel**: Character silhouette with equipment slots or secondary inventory display
-- **Bottom Hotbar**: Quick access to the first 5 inventory slots (slots 1-5)
-- **Top Hotkey Bar**: Visual display of keyboard shortcuts
+- **Left Panel**: "FICKOR" (Pockets) grid layout with 5 columns, displaying the first 25 inventory slots
+- **Left Panel Extended**: "RYGGSÄCK" (Backpack) section for additional slots beyond 25
+- **Right Panel**: Character silhouette with equipment slots, or displays secondary inventory (shops, stashes, etc.)
+- **Bottom Hotbar**: Quick access to the first 5 inventory slots (slots 1-5), appears on toggle
+- **Top Hotkey Bar**: Visual display of keyboard shortcuts with Swedish labels (TAB: Stäng, F: Använd, G: Släng)
+- **Dark Theme**: Modern dark color scheme with blue accents
+- **Weight Bars**: Visual indicators showing current weight vs. maximum capacity
 
-### No Build Required
+### 🚀 No Build Required
 
-The resource comes with pre-built UI assets in `web/build/`, so you can:
-1. Download and extract the resource
-2. Start your server
-3. Press your inventory keybind to open the new UI
+The resource comes with **pre-built UI assets** in `web/build/`, so you can:
+1. Download and extract the resource to your FiveM server
+2. Start the server: `ensure ox_inventory`
+3. Press your inventory keybind (default: TAB) to open the new UI
 
-No additional setup, npm install, or build steps required on the server!
+**No additional setup, npm install, or build steps required on the server!**
 
-### Toggle UI (Optional)
+### 🔧 Toggle UI Theme (Optional)
 
-The UI can be toggled between Classic and Scandinavian themes by editing `web/src/App.tsx` and changing the `useScandinavianUI` constant, then rebuilding:
+To switch between Classic and Scandinavian themes:
 
-```bash
-cd web
-npm install
-npm run build
-```
+1. Edit `web/src/config.ts`
+2. Change `USE_SCANDINAVIAN_UI` to `true` (Scandinavian) or `false` (Classic)
+3. Rebuild the project:
+   ```bash
+   cd web
+   npm install
+   npm run build
+   ```
+
+### 🎮 Compatibility
+
+The Scandinavian UI maintains **100% compatibility** with the existing ox_inventory system:
+- All NUI callbacks are preserved (`setupInventory`, `refreshSlots`, `closeInventory`, etc.)
+- Drag & drop functionality works identically
+- All item actions and context menus remain functional
+- No changes required to server-side Lua code
+- Works with all existing inventory types (player, shop, crafting, stash, etc.)
+
+### 📸 Preview
+
+![Scandinavian UI](https://github.com/user-attachments/assets/0fe27aed-cc51-4195-a0c8-40c4fb5fbc13)
 
 ## ✨ Features (continued)
 

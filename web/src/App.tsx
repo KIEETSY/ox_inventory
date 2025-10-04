@@ -12,6 +12,7 @@ import DragPreview from './components/utils/DragPreview';
 import { fetchNui } from './utils/fetchNui';
 import { useDragDropManager } from 'react-dnd';
 import KeyPress from './components/utils/KeyPress';
+import { USE_SCANDINAVIAN_UI } from './config';
 
 debugData([
   {
@@ -111,12 +112,9 @@ const App: React.FC = () => {
     manager.dispatch({ type: 'dnd-core/END_DRAG' });
   });
 
-  // Use Scandinavian UI by default
-  const useScandinavianUI = true;
-
   return (
     <div className="app-wrapper">
-      {useScandinavianUI ? (
+      {USE_SCANDINAVIAN_UI ? (
         <>
           <ScandinavianInventory />
           <DragPreview />
